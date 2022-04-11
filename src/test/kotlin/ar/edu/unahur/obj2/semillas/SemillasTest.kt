@@ -28,26 +28,25 @@ class SemillasTest : DescribeSpec ({
             soja.altura.shouldBe(0.6)
             soja.anioSemilla.shouldBe(2009)
         }
-        //agregue cosas al test hasta aca
 
         it("verificar si da semillas") {
             menta.daSemillas().shouldBeTrue()
             mentita.daSemillas().shouldBeFalse()
             soja.daSemillas().shouldBeFalse()
-            quinoa.daSemillas().shouldBeTrue()
+            quinoa.daSemillas().shouldBeFalse()
         }
 
         it("es fuerte") {
             menta.esFuerte().shouldBeFalse()
             soja.esFuerte().shouldBeFalse()
-            quinoa.esFuerte().shouldBeTrue()//agregue yo
+            quinoa.esFuerte().shouldBeFalse()
         }
 
         it("espacio") {
             menta.espacio().shouldBe(2.0)
             mentita.espacio().shouldBe(1.3)
             soja.espacio().shouldBe(0.3)
-            quinoa.espacio().shouldBe(0.4)
+            quinoa.espacio().shouldBe(4.0)// me tira error, Expression 'espacio' of type 'Double' cannot be invoked as a function. The function 'invoke()' is not found
         }
 
         it("verifico la suma de varias") {
