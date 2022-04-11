@@ -70,7 +70,7 @@ class Planta(var altura: Double, val anioSemilla: Int) {
     fun daSemillas(){}//no se si dejarlo o sacarlo
 
     fun espacio() {//no se si dejarlo o sacarlo
-    
+
     }
 
 }
