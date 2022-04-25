@@ -20,7 +20,7 @@ class SemillasTest : DescribeSpec ({
         val s3= Soja(4.6, 2009)
         val s4= Soja(3.6, 2009)
         val quinoa = Quinoa(0.2, 2010, 4.0)
-        val parcela1 = Parcelas(20, 1, 10, mutableListOf(s1,s2,s3,s4), 4)
+        val parcela1 = Parcelas(2.0, 1.0, 10, mutableListOf(s1,s2,s3,s4), 4)
         //(var ancho: Int, val largo: Int, val horasSol: Int, val listasPlantas: MutableList<Planta>, val cantMaximaPlantas: Int) {
 
 
@@ -56,7 +56,7 @@ class SemillasTest : DescribeSpec ({
             menta.espacio().shouldBe(2.0)
             mentita.espacio().shouldBe(1.3)
             soja.espacio().shouldBe(0.3)
-            quinoa.espacio().shouldBe(4.0)// me tira error, Expression 'espacio' of type 'Double' cannot be invoked as a function. The function 'invoke()' is not found
+            quinoa.espacio().shouldBe(4.0)
         }
 
         it("verifico la suma de varias") {

@@ -12,6 +12,8 @@ open class Planta(var altura: Double, val anioSemilla: Int) {
         return this.horasTolerablesAlSol() > Planta.Constates.auxEsFuerte
     }
 
+    open fun esIdealParaParcela(parcela:Parcelas)=false
+
 
 }
 
@@ -24,6 +26,9 @@ open class Menta(altura: Double, anioSemilla: Int): Planta(altura,anioSemilla) {
     }
 
     fun daSemillas()=this.esFuerte() or (altura>0.4)
+
+    override fun esIdealParaParcela(parcela:Parcelas)= parcela.superficie()>6
+
 
 }
 
@@ -41,6 +46,9 @@ class Quinoa(altura: Double, anioSemilla: Int,val espacio: Double): Planta(altur
         } else {
             7
         }
+
+    override fun esIdealParaParcela(parcela:Parcelas)=!(parcela.listasPlantas.any{it.altura>1.5})
+    //parcelas en las que no haya ninguna planta cuya altura supere los 1.5 metros
 
 }
 
@@ -60,6 +68,10 @@ open class Soja(altura: Double, anioSemilla: Int): Planta(altura,anioSemilla) {
         }else{
             12
         }
+
+    //la cantidad de sol que recibe la parcela es exactamente igual a los que ella tolera
+    override fun esIdealParaParcela(parcela:Parcelas)= parcela.horasSol==this.horasTolerablesAlSol()
+
 }
 
 /////////////////////////////PUNTO 2 ////////////////////////////////
@@ -67,6 +79,8 @@ open class Soja(altura: Double, anioSemilla: Int): Planta(altura,anioSemilla) {
 class SojaTransgenica(altura: Double, anioSemilla: Int): Soja(altura,anioSemilla){
 
     override fun daSemillas()= false
+    //prefiere parcelas cuya cantidad máxima de plantas sea igual a 1.
+    override fun esIdealParaParcela(parcela:Parcelas)= parcela.cantMaximaPlantas==1
 
 }
 
