@@ -1,6 +1,5 @@
 package ar.edu.unahur.obj2.semillas
 
-import ar.edu.unahur.obj2.semillas.Parcelas
 
 import io.kotest.core.spec.style.DescribeSpec
 import io.kotest.matchers.booleans.shouldBeFalse
@@ -57,8 +56,7 @@ class SemillasTest : DescribeSpec ({
             menta.espacio().shouldBe(2.0)
             mentita.espacio().shouldBe(1.3)
             soja.espacio().shouldBe(0.3)
-            quinoa.espacio()
-                .shouldBe(4.0)// me tira error, Expression 'espacio' of type 'Double' cannot be invoked as a function. The function 'invoke()' is not found
+            quinoa.espacio().shouldBe(4.0)// me tira error, Expression 'espacio' of type 'Double' cannot be invoked as a function. The function 'invoke()' is not found
         }
 
         it("verifico la suma de varias") {

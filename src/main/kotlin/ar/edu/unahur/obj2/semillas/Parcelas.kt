@@ -1,6 +1,6 @@
 package ar.edu.unahur.obj2.semillas
 
-class Parcelas(var ancho: Int, val largo: Int, val horasSol: Int, val listasPlantas: MutableList<Planta>, val cantMaximaPlantas: Int) {
+class Parcelas(var ancho: Int, val largo: Int, var horasSol: Int, val listasPlantas: MutableList<Planta>, val cantMaximaPlantas: Int) {
 
     fun superficie()= ancho*largo
 
@@ -18,8 +18,8 @@ class Parcelas(var ancho: Int, val largo: Int, val horasSol: Int, val listasPlan
 
     fun totalPlantas()=listasPlantas.count()
 
-    fun plantarPlanta(planta){
-        if(cantMaximaPlantas>this.totalPlantas() or planta.horasTolerablesAlSol() >=horasSol+2){
+    fun plantarPlanta(planta: Planta){
+        if(cantMaximaPlantas>this.totalPlantas() || planta.horasTolerablesAlSol()>=horasSol+2){
             throw IllegalArgumentException("No se pudo plantar la planta")
         } else{
             listasPlantas.add(planta)
