@@ -25,6 +25,7 @@ open class Parcelas(var ancho: Double, val largo: Double, var horasSol: Int, val
 
     }
 
+
 }
 
 class ParcelaEcologica (ancho: Double, largo: Double, horasSol: Int,listasPlantas: MutableList<Planta>,cantMaximaPlantas: Int): Parcelas(ancho,largo,horasSol,listasPlantas, cantMaximaPlantas){

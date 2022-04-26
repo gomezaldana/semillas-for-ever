@@ -27,9 +27,8 @@ class ParcelasTest: DescribeSpec({
 
         it("planta NO se asocia bien en una parcela ecologica porque la parcela tiene complicaciones") {
             pEcologica2.plantarPlanta(soja)
-            pEcologica2.plantarPlanta(menta)
             pEcologica2.tieneComplicaciones().shouldBeTrue()
-            menta.esIdealParaParcela(pEcologica)
+            menta.esIdealParaParcela(pEcologica).shouldBeTrue()
             pEcologica2.seAsociaBien(menta).shouldBeFalse()
         }
 
