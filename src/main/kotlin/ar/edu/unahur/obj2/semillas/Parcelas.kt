@@ -14,7 +14,7 @@ open class Parcelas(var ancho: Double, val largo: Double, var horasSol: Int, val
 
     fun tieneComplicaciones()=listasPlantas.any{it.horasTolerablesAlSol()<horasSol}
 
-    fun totalPlantas()=listasPlantas.count()
+    fun totalPlantas()=listasPlantas.size
 
     fun plantarPlanta(planta: Planta){
         if(cantMaximaPlantas>this.totalPlantas() || planta.horasTolerablesAlSol()>=horasSol+2){
@@ -23,6 +23,12 @@ open class Parcelas(var ancho: Double, val largo: Double, var horasSol: Int, val
             listasPlantas.add(planta)
         }
 
+    }
+
+    fun cantBienAsociadas()=listasPlantas.count{it.esIdealParaParcela(this)}
+
+    fun porcentajeBienAsociadas(): Double {
+        return this.cantBienAsociadas() /this.totalPlantas().toDouble()
     }
 
 
